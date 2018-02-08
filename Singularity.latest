@@ -7,10 +7,11 @@ From:alpine:3.6
 %files
 #Installation of tool
 build.sh
+rpackages.txt /tmp
 
 %environment
 #Set your toolname here and the appropriate version to have this in the metadata of your container
-    <TOOL>_VERSION=v1.0
+    R_VERSION=v3.2.5
 
 %labels
-Maintainer	alexander.peltzer@uni-tuebingen.de
+Maintainer	sven.fillinger@qbic.uni-tuebingen.de
