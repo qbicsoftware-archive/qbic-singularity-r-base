@@ -1,0 +1,17 @@
+Bootstrap:docker
+From:alpine:3.6
+
+%post
+/bin/sh build.sh
+
+%files
+#Installation of tool
+build.sh
+rpackages.txt /tmp
+
+%environment
+#Set your toolname here and the appropriate version to have this in the metadata of your container
+    R_VERSION=v3.2.5
+
+%labels
+Maintainer	sven.fillinger@qbic.uni-tuebingen.de
