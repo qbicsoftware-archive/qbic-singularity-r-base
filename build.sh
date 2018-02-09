@@ -1,32 +1,27 @@
 #!/bin/bash
 #This is required to build the stuff
 
-set -euo pipefail
-
 PKSLIST=/tmp/rpackages.txt
+RMAJOR=3
+RVERSION=3.2.2
+
+NLOPT=nlopt-2.4.2
 
 #Add here what kind of dependencies you need in general
 #Check for packages here: https://pkgs.alpinelinux.org/packages
-apk --update add bash wget curl build-base gcc git ca-certificates gfortran perl
+apt update && apt upgrade -y && apt install -y bash wget curl gcc git ca-certificates r-base=3.2.3-4 libssl-dev
 
+# Download nlopt, as this will be needed by some r packages
 mkdir /build
-
 cd /build
-
-RMAJOR=3
-RVERSION=3.2.5
-
-# Download R
-wget https://cloud.r-project.org/src/base/R-$RMAJOR/R-$RVERSION.tar.gz
-
-#Run the installation here or in the Singularity file itself, no matter which one
-tar -xzf *.tar.gz
-cd R-$RVERSION
-
-./configure --with-readline=no --with-x=no
+wget https://github.com/stevengj/nlopt/releases/download/$NLOPT/$NLOPT.tar.gz
+tar -xzf $NLOPT.tar.gz
+cd $NLOPT
+./configure
 make
 make install
 
+# Download and install R packages from list
 cat $PKSLIST | xargs -i sh -c 'R --vanilla <<EOF
 install.packages("{}", repos="http://cran.us.r-project.org", dependencies=TRUE)
 q()
