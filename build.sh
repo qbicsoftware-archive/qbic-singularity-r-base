@@ -23,7 +23,8 @@ make install
 
 # Download and install R packages from list
 cat $PKSLIST | xargs -i sh -c 'R --vanilla <<EOF
-install.packages("{}", repos="http://cran.us.r-project.org", dependencies=TRUE)
+source("https://bioconductor.org/biocLite.R")
+biocLite("{}", ask=FALSE)
 q()
 EOF'
 
