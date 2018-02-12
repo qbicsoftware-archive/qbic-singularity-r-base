@@ -9,7 +9,7 @@ NLOPT=nlopt-2.4.2
 
 #Add here what kind of dependencies you need in general
 #Check for packages here: https://pkgs.alpinelinux.org/packages
-apt update && apt upgrade -y && apt install -y bash wget curl gcc git ca-certificates r-base=3.2.3-4 libssl-dev
+apt update && apt upgrade -y && apt install -y bash wget curl gcc git ca-certificates tcl tk r-base=3.2.3-4 libssl-dev
 
 # Download nlopt, as this will be needed by some r packages
 mkdir /build
