@@ -14,9 +14,9 @@ First of all, you need to have *Singularity* running on your system. Please chec
 
 Pull from Singularity Hub
 ~~~~~~~
-The easiest way to use this container is to pull it `from Singularity Hub`_ directly
+The easiest way to use this container is to pull it from `Singularity Hub`_ directly
 
-.. _Hub: https://singularity-hub.org/
+.. _`Singularity Hub`: https://singularity-hub.org/
 
 .. code-block:: bash
    
@@ -51,4 +51,6 @@ You can access the R console by just running:
 Author
 -------
 
-`Sven Fillinger`_ (https://github.com/sven1103)
+`Sven Fillinger`_ 
+
+.. _`Sven Fillinger`: https://github.com/sven1103
