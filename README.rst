@@ -47,6 +47,43 @@ You can access the R console by just running:
   
   singularity exec myawesomecontainer.simg R
 
+Extend container build
+--------
+
+Type 1
+~~~~~~
+You can always extend the container by simply edititing the ``build.sh`` or ``rpackages.txt``. However, we strongly advice to make versions of them and reference them in a new bootstrap file, i.e.:
+
+.. code-block:: bash
+   
+   cp build.sh build_v1_0.sh
+   # make you changes in build_v1_0.sh
+   ...
+   cp Singularity.latest Singularity.v1.0
+   vim Singularity.v1.0
+   -------
+   ....
+   /bin/sh build_v1_0.sh
+   ....
+   %files
+   build_v1_0.sh
+   
+Reproducibility for the win!
+
+Type 2
+~~~~~~
+For example for project specific containers, that build upon this container, you can create an own Github repo and build your own container recipe. Your ``Singularity.latest`` would then look like:
+
+.. code-block:: bash
+
+   Bootstrap: shub
+   From: qbicsoftware/qbic-singularity-r-v3.2
+   ...
+
+
+
+
+
 
 Author
 -------
