@@ -2,11 +2,11 @@ Bootstrap:docker
 From:ubuntu:16.04
 
 %post
-/bin/sh build_short.sh
+/bin/sh build.sh
 
 %files
 #Installation of tool
-build_short.sh
+build.sh
 rpackages.txt /tmp
 
 %environment
