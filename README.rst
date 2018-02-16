@@ -77,11 +77,8 @@ For example for project specific containers, that build upon this container, you
 .. code-block:: bash
 
    Bootstrap: shub
-   From: qbicsoftware/qbic-singularity-r-v3.2
+   From: qbicsoftware/qbic-singularity-r-v3.2:latest
    ...
-
-
-
 
 
 
