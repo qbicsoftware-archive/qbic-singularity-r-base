@@ -318,8 +318,6 @@ RcppArmadillo
 RcppEigen
 RCurl
 RCytoscape
-reactome.db
-ReactomePA
 regioneR
 registry
 rentrez
