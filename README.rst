@@ -13,11 +13,13 @@ Pull from Singularity Hub
 The easiest way to use this container is to pull it from [Singularity Hub](https://singularity-hub.org/) directly:
 
 .. code-block:: bash
+   
    singularity pull shub://qbicsoftware/qbic-singularity-r-v3.2:latest
 
 or a particular version (i.e. `v1.0`):
 
 .. code-block:: bash
+  
   singularity pull shub://qbicsoftware/qbic-singularity-r-v3.2:v1.0
   # Give it a new name locally
   singularity pull --name "mycontainer.simg" shub://qbicsoftware/qbic-singularity-r-v3.2:v1.0
@@ -27,6 +29,7 @@ Build from bootstrap file
 You can also build the container yourself by just providing the bootstrap file (i.e. `Singularity.lastest`). You will need to have `sudo` rights for doing so:
 
 .. code-block:: bash
+  
   sudo singularity build myawesomecontainer.simg Singularity.latest
   sudo singularity build myawesomecontainer.simg Singularity.latest &> build.log
 
@@ -35,6 +38,7 @@ Start R from within the container
 You can access the R console by just running:
 
 .. code-block:: bash
+  
   singularity exec myawesomecontainer.simg R
 
 
