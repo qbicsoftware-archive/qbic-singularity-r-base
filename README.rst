@@ -104,7 +104,12 @@ Once your ``R``-script is ready and you are good to go for a final analysis run 
    info <- sessionInfo()
    write.table(attributes(info$otherPkgs)$names, file="rpackages.txt" row.names=FALSE, col.names=FALSE, quote=FALSE)
 
-That's it! Define the R version you want to use in the ``Singularity`` file and edit the tag, which the defines the underlying Docker container in this case on https://hub.docker.com/r/library/r-base/tags/:
+That's it! 
+
+Define R version
+~~~~~~~~~
+
+Define the R version you want to use in the ``Singularity`` file and edit the tag, which the defines the underlying Docker container in this case on https://hub.docker.com/r/library/r-base/tags/:
 
 .. code-block:: bash
    
