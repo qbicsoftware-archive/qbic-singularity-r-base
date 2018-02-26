@@ -80,7 +80,39 @@ For example for project specific containers, that build upon this container, you
    From: qbicsoftware/qbic-singularity-r-base:latest
    ...
 
+Define R packages
+-----------
 
+If you want to install additional ``R`` packages, you can put them into the ``rpackages.txt`` file, as line-separated list of package names, i.e.:
+
+.. code-block:: bash
+
+   > cat rpackages.txt
+   lme4
+   stringr
+   ...
+
+Export R packages from current session
+~~~~~~
+
+Once your ``R``-script is ready and you are good to go for a final analysis run (i.e. for publication), you can query the R environment information of your local development environment via the ``sessionInfo()`` function. Please check the official documentation for a detailed description of sessionInfo_.
+
+.. _sessionInfo: https://stat.ethz.ch/R-manual/R-devel/library/utils/html/sessionInfo.html
+
+.. code-block:: R
+   
+   info <- sessionInfo()
+   write.table(attributes(info$otherPkgs)$names, file="rpackages.txt" row.names=FALSE, col.names=FALSE, quote=FALSE)
+
+That's it! Define the R version you want to use in the ``Singularity`` file and edit the tag, which the defines the underlying Docker container in this case on https://hub.docker.com/r/library/r-base/tags/:
+
+.. code-block:: bash
+   
+   # Content of i.e. Singularity.latest
+   Bootstrap:docker
+   From:r-base:latest
+   # or
+   From:r-base:3.2.5
 
 Author
 -------
