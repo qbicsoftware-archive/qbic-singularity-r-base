@@ -1,5 +1,5 @@
 Bootstrap:docker
-From:ubuntu:16.04
+From:r-base:3.2.4
 
 %post
 /bin/sh build.sh
@@ -7,10 +7,11 @@ From:ubuntu:16.04
 %files
 #Installation of tool
 build.sh
+rpackages.txt /tmp
 
 %environment
 #Set your toolname here and the appropriate version to have this in the metadata of your container
-    R_VERSION=v3.2.3-4
+    R_VERSION=v3.2.4
 
 %labels
 Maintainer	sven.fillinger@qbic.uni-tuebingen.de
