@@ -1,7 +1,10 @@
 QBiC Singularity R base
 ====================
 
-This is a containerized version of `R` running on an image based on the official Docker container on https://hub.docker.com/_/r-base/.
+This is a containerized version of `R` running on an image based on the official Docker container on `Docker Hub`_.
+
+.. _`Docker Hub`: https://hub.docker.com/_/r-base/.
+
 .. contents:: Table of Contents
    :depth: 3
 
