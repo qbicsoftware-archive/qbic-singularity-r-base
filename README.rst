@@ -1,7 +1,7 @@
-QBiC Singularity R v3.2.2
+QBiC Singularity R base
 ====================
 
-This is a containerized version of `R v3.2.2` running on an ``Ubuntu 16.04``. Find a list of packages in `rpackages.txt`. 
+This is a containerized version of `R` running on an based on the official Docker . Find a list of packages in `rpackages.txt`. 
 
 .. contents:: Table of Contents
    :depth: 3
@@ -20,15 +20,15 @@ The easiest way to use this container is to pull it from `Singularity Hub`_ dire
 
 .. code-block:: bash
    
-   singularity pull shub://qbicsoftware/qbic-singularity-r-v3.2:latest
+   singularity pull shub://qbicsoftware/qbic-singularity-r-base:latest
 
 or a particular version (i.e. ``v1.0``):
 
 .. code-block:: bash
   
-  singularity pull shub://qbicsoftware/qbic-singularity-r-v3.2:v1.0
+  singularity pull shub://qbicsoftware/qbic-singularity-r-base:v1.0
   # Give it a new name locally
-  singularity pull --name "mycontainer.simg" shub://qbicsoftware/qbic-singularity-r-v3.2:v1.0
+  singularity pull --name "mycontainer.simg" shub://qbicsoftware/qbic-singularity-r-base:v1.0
 
 Build from bootstrap file
 ~~~~~~~
@@ -77,7 +77,7 @@ For example for project specific containers, that build upon this container, you
 .. code-block:: bash
 
    Bootstrap: shub
-   From: qbicsoftware/qbic-singularity-r-v3.2:latest
+   From: qbicsoftware/qbic-singularity-r-base:latest
    ...
 
 
